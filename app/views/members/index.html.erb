@@ -1,0 +1,9 @@
+<h2>Member List</h2>
+<ul>
+  <%@members.each do |mem|%>
+    <li><%= link_to mem.to_s, member_path(mem) %></li>
+    <% end %>
+</ul>
+<div>
+  <%= link_to "Create New", new_member_path %>
+</div>
