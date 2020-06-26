@@ -1,1 +1,15 @@
 <h3><%= @member.to_s %></h3>
+<% if !@member.gyms.empty?%>  
+  <div><h4>Gym Memberships:</h4>
+  <ul>
+    <%@member.gyms.each do |gym|%>
+      <li><%=gym.name%></li>
+      <% end %>
+  </div>
+<% else %>
+  <h5>This person is not a member of any gyms</h5>
+<% end %>
+<div>
+  <%= link_to "Delete this Member", member_path(@member.id), method: "DELETE" %>
+  <%= link_to "Edit this Member", edit_member_path(@member.id)%>
+</div>
