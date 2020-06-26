@@ -13,6 +13,15 @@ class MembersController < ApplicationController
   
   def create
     @member = Member.create(member_params)
+    ids = member_params[:gym_ids]
+    # ids.each do |id|
+    #   if id != ""
+    #     gm = GymMember.new
+    #     gm.member = @member
+    #     gm.gym = Gym.find(id.to_s)
+    #     gm.save
+    #   end
+    # end
     redirect_to member_path(@member)
   end
   
@@ -30,7 +39,7 @@ class MembersController < ApplicationController
   end
   private
   def member_params
-    params.require(:member).permit(:first_name,:last_name)
+    params.require(:member).permit(:first_name,:last_name,:gym_ids => [])
   end
   def set_member
     @member = Member.find(params[:id])
