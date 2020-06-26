@@ -1,0 +1,19 @@
+<h1><%= @gym.name %></h1>
+<h2><%= @gym.city %></h2>
+<p>Find me in app/views/gyms/show.html.erb</p>
+
+<h4>Gym Roster:</h4>
+<% if !@gym.members.empty?%>
+<ul>
+<% @gym.members.each do |mem| %>
+    <li><%= link_to mem.to_s, member_path(mem) %></li>
+<% end %>
+</ul>
+<% else %>
+<h5>This gym does not have any members</h5>
+<% end %>
+
+<div>
+    <%= link_to "Delete this Gym", gym_path(@gym.id), method: "DELETE" %>
+    <%= link_to "Edit this Gym", edit_gym_path(@gym.id)%>
+</div>

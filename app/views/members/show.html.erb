@@ -3,9 +3,10 @@
   <div><h4>Gym Memberships:</h4>
   <ul>
     <%@member.gyms.each do |gym|%>
-      <li><%=gym.name%></li>
+      <li><%= link_to gym.name, gym_path(gym)%></li>
       <% end %>
   </div>
+  </ul>
 <% else %>
   <h5>This person is not a member of any gyms</h5>
 <% end %>
