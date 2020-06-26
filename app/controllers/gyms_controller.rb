@@ -18,6 +18,11 @@ class GymsController < ApplicationController
     @gym = Gym.create(gym_params)
     redirect_to gym_path(@gym)
   end
+  
+  def update
+    @gym.update(gym_params)
+    redirect_to gym_path(@gym)
+  end
 
   private
   def gym_params

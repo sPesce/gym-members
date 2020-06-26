@@ -3,6 +3,7 @@
 <%= f.label :first_name, "First_name"%>
 <%= f.text_field :first_name %>
 <%= f.label :last_name, "Last_name"%>
-<%= f.text_field :last_name %>
+<%= f.text_field :last_name %><br>
+<%= f.collection_check_boxes :gym_ids, Gym.all, :id, :name %><br>
 <%= f.submit "Apply Changes"%>
 <% end %>

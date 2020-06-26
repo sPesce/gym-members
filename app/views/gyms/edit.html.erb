@@ -1,0 +1,8 @@
+<h2>Create New Gym</h2>
+<%= form_for @gym do |f| %>
+    <%= f.label :name, "Gym Name" %>
+    <%= f.text_field :name %>
+    <%= f.label :city, "City" %>
+    <%= f.text_field :city %>
+    <%= f.submit "Edit Gym" %>
+<% end %>
